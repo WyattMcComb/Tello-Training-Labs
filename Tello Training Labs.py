@@ -12,7 +12,6 @@ locaddr = (host,port)
 tello_address = ('192.168.10.1', 8889) # Get the Tello drone's address
 
 
-
 # Creates a UDP socketd
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
@@ -30,7 +29,7 @@ def recv():
             break
 
 
-def sendmsg(msg, sleep = 6):
+def sendmsg(msg, sleep = 4):
     print("Sending: " + msg)
     msg = msg.encode(encoding="utf-8")
     sock.sendto(msg, tello_address)
@@ -45,8 +44,13 @@ recvThread.start()
 
 def square():
     for i in range (4):
-        sendmsg('forward 100') #Drone will go forward 100cm
-        sendmsg('ccw 90') #Drone will turn counter clockwise 90 degrees
+        sendmsg('forward 100')  # Drone will go forward 100cm
+        sendmsg('ccw 90')  # Drone will turn counter clockwise 90 degrees
+
+def triangle():
+    for i in range(3):
+        sendmsg('forward 100')  # Drone will go forward 100cm
+        sendmsg('ccw 120')  # Drone will turn counter clockwise 120 degrees
 
 
 print("\nWyatt McComb")
@@ -62,9 +66,9 @@ try:
         print("\nStarting Drone!\n")
 
         sendmsg('command', 0)
-        sendmsg('takeoff')
+        sendmsg('takeoff', 8)
 
-        square() #Calling Function Square
+        square()  # Calling Function Square
 
         sendmsg('land')
 
