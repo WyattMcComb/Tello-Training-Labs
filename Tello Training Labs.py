@@ -67,8 +67,10 @@ try:
 
         sendmsg('command', 0)
         sendmsg('takeoff', 8)
+        sendmsg('up 50')
 
-        square()  # Calling Function Square
+        # square()
+        triangle()
 
         sendmsg('land')
 
