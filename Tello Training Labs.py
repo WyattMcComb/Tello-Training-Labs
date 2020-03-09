@@ -70,6 +70,8 @@ try:
         sendmsg('up 50')
         sendmsg('flip f')
         sendmsg('flip b')
+        sendmsg('flip l')
+        sendmsg('flip r')
 
         # square()
         #triangle()
