@@ -68,9 +68,11 @@ try:
         sendmsg('command', 0)
         sendmsg('takeoff', 8)
         sendmsg('up 50')
+        sendmsg('flip f')
+        sendmsg('flip b')
 
         # square()
-        triangle()
+        #triangle()
 
         sendmsg('land')
 
