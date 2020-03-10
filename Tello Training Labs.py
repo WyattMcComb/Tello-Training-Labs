@@ -52,6 +52,14 @@ def triangle():
         sendmsg('forward 100')  # Drone will go forward 100cm
         sendmsg('ccw 120')  # Drone will turn counter clockwise 120 degrees
 
+def flip():
+    for i in range(1):
+        sendmsg('up 50')
+        sendmsg('flip f')
+        sendmsg('flip b')
+        sendmsg('flip l')
+        sendmsg('flip r')
+
 
 print("\nWyatt McComb")
 print("Tello Training Lab square Function: ")
@@ -67,12 +75,7 @@ try:
 
         sendmsg('command', 0)
         sendmsg('takeoff', 8)
-        sendmsg('up 50')
-        sendmsg('flip f')
-        sendmsg('flip b')
-        sendmsg('flip l')
-        sendmsg('flip r')
-
+        flip()
         # square()
         #triangle()
 
